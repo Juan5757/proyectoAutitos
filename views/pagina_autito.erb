@@ -1,0 +1,42 @@
+<h1 class= "nameJugador">Jugador: <%=@nombreJugador%></h1>
+<center>
+<h1 >Autito</h1>
+<form method='post' action='/Autito/parametros'>
+
+        <% for i in 0..@@autitos.length()-1 do%>
+            <label for="nombreAutito">Nombre Auto:</label>
+            <input type="text" name ="<%=i%>nombreAutito" placeholder ="nombre del autito" >
+            <br>
+            <input type="hidden" name ="<%=i%>nombreJugador" value = <%=@nombreJugador%> >
+            <label for="posicionIncialX">Posicion Inicial en X:</label>
+            <input type="number" name ="<%=i%>posicionIncialX" placeholder = "ingresa un numero" >
+            <br>
+            <label for="posicionIncialY">Posicion Inicial en Y:</label>
+            <input type="number" name ="<%=i%>posicionIncialY" placeholder = "ingresa un numero" >
+            <br>
+            <label for="orientacionInicial">Orientacion Inicial:</label>
+            <select name= "<%=i%>orientacionInicial">
+                    <option value="N">Norte</option> 
+                    <option value="E">Este</option> 
+                    <option value="O">Oeste</option> 
+                    <option value="S">Sud</option> 
+            </select>
+            <br>
+            <label for="movimientosAutito">Movimientos (Avanzar: U , Derecha: D , Izquierda: I, Retroceder: R):</label>
+            
+            
+            <input type="textfield" name="<%=i%>movimientosAutito">
+            <br>
+        <%end%>
+        <input type="submit" name="siguiente" value="siguiente">
+        <br>
+</form>
+</center>
+
+<style>
+ .nameJugador{
+   position:absolute;
+   bottom:80;
+   right:180;
+  }
+</style>

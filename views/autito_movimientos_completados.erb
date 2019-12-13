@@ -1,0 +1,82 @@
+<center>
+<h1>Resultado: </h1>
+    <body>
+        <br>
+        <br>
+        <% for i in 0..@@resultados.length()-1 do%>
+            <label for="nombreAutito">Nombre Auto:</label>
+            <label><%=@@autitos[i].getNombre%></label>
+            <br>
+            <label for="posicionIncialX">Posicion Inicial en X:</label>
+            
+            
+            <% if @@resultados[i].getPosCol.to_i<=@@main_terreno.getColumnas.to_i and @@resultados[i].getPosCol.to_i>=0 %>
+                <label><%=@@resultados[i].getPosCol%></label>
+            <% else %>
+                <label>Error en la Posicion X</label>
+            <% end %>
+            
+            <br>
+            <label for="posicionIncialY">Posicion Inicial en Y:</label>
+            
+
+            <% if @@resultados[i].getPosFil.to_i<=@@main_terreno.getFilas.to_i and @@resultados[i].getPosFil.to_i>=0 %>
+                <label><%=@@resultados[i].getPosFil%></label>
+            <% else %>
+                <label>Error en la Posicion Y</label>
+            <% end %> 
+            <br>
+            <label for="orientacionInicial">Orientacion Inicial</label>
+            <label><%=@@resultados[i].getOrientacion%></label>
+            <br>
+            <label for="movimientos">Movimientos:</label>
+            <label><%=@@resultados[i].getMovimientos%></label>
+            <br>
+            <br>
+            <br>
+            <label for="posicionFinalX">Posicion Final en X:</label>
+            
+            <% if @@autitos[i].getPosCol.to_i<=@@main_terreno.getColumnas.to_i and @@autitos[i].getPosCol.to_i>=0 %>
+                <label><%=@@autitos[i].getPosCol%></label>
+            <% else %>
+                <label>Error en la Posicion X</label>
+            <% end %>
+            <br>
+            <label for="posicionFinalY">Posicion Final en Y:</label>
+            
+
+            <% if @@autitos[i].getPosFil.to_i<=@@main_terreno.getFilas.to_i and @@autitos[i].getPosFil.to_i>=0 %>
+                <label><%=@@autitos[i].getPosFil%></label>
+            <% else %>
+                <label>Error en la Posicion Y</label>
+            <% end %> 
+            <br>
+            <label for="orientacion">Orientacion:</label>
+            <label><%=@@autitos[i].getOrientacion%></label>
+            <br>
+            <label for="movimientos">Movimientos:</label>
+            <label><%=@@autitos[i].getMovimientos%></label>
+            <br>
+        <%end%>
+        <br>
+        <table >
+                <% for fila in 0..@@main_terreno.getFilas()-1 do  %>
+                <tr>
+                        <%for col in 0..@@main_terreno.getColumnas()-1 do %>
+                        <td> <%="___"%> </td>
+                        <% end %>
+                </tr>
+                <% end %>
+        </table>
+
+
+        
+    </body>
+</center>
+<style>
+ .nameJugador{
+   position:absolute;
+   bottom:80;
+   right:180;
+  }
+</style>

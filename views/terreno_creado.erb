@@ -1,0 +1,36 @@
+<h1 class= "nameJugador">Jugador: <%=@nombreJugador%></h1>
+<center>
+
+        <h1><%=@message%></h1>
+
+<body>
+
+<form method='post' action='/Autito'>
+        <input type="hidden" name ="nombreJugador" value = <%=@nombreJugador%> >
+        <label> Cantidad de Autos: </label>
+        <input type='number' name='cantidadAutos' value="1" min="1">
+
+        <input type="submit" name="continuar" value="continuar">
+        <br>
+        <table >
+                <% for fila in 0..@@main_terreno.getFilas()-1 do  %>
+                <tr>
+                        <%for col in 0..@@main_terreno.getColumnas()-1 do %>
+                        <td> <%="___"%> </td>
+                        <% end %>
+                </tr>
+                <% end %>
+        </table>
+</form>
+
+
+</body>
+</center>
+
+<style>
+ .nameJugador{
+   position:absolute;
+   bottom:80;
+   right:180;
+  }
+</style>

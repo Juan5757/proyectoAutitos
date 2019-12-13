@@ -1,0 +1,25 @@
+<center>
+<h1>Terreno</h1>
+    <body>
+        <h1 class= "nameJugador">Jugador: <%=@nombreJugador%></h1>
+        <form method='post' action='/TerrenoCreado'>
+            <label for="limiteFilasTerrreno">Limite de filas del terreno:</label>
+            <input type="number" name ="limiteFilasTerreno" placeholder = "ingrese un numero" >
+            <br>
+            <input type="hidden" name ="nombreJugador" value =  <%=@nombreJugador%> >
+            <label for="limiteColumnasTerrreno">Limite de columnas del terreno:</label>
+            <input type="number" name ="limiteColumnasTerreno" placeholder = "ingrese un numero" >
+            <br>
+            <br>
+            <input type="submit"  value="Crear" >
+            <br>
+        </form>
+    </body>
+</center>
+<style>
+ .nameJugador{
+   position:absolute;
+   bottom:80;
+   right:180;
+  }
+</style>
